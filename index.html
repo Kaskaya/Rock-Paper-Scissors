@@ -39,7 +39,8 @@
         wins: 0,
         losses: 0,
         ties: 0,
-      }"
+      };
+      console.log(results);"
     >
       Reset Score
     </button>
@@ -69,32 +70,20 @@
           alert(
             `You chose ${yourMove}. Computer chose ${computerMove}. It's a tie.`
           );
-        } else if (yourMove === "Rock" && computerMove === "Paper") {
+        } else if (
+          (yourMove === "Rock" && computerMove === "Paper") ||
+          (yourMove === "Paper" && computerMove === "Scissors") ||
+          (yourMove === "Scissors" && computerMove === "Rock")
+        ) {
           results.losses += 1;
           alert(
             `You chose ${yourMove}. Computer chose ${computerMove}. You lost.`
           );
-        } else if (yourMove === "Rock" && computerMove === "Scissors") {
-          results.wins += 1;
-          alert(
-            `You chose ${yourMove}. Computer chose ${computerMove}. You Won.`
-          );
-        } else if (yourMove === "Paper" && computerMove === "Rock") {
-          results.wins += 1;
-          alert(
-            `You chose ${yourMove}. Computer chose ${computerMove}. You Won.`
-          );
-        } else if (yourMove === "Paper" && computerMove === "Scissors") {
-          results.losses += 1;
-          alert(
-            `You chose ${yourMove}. Computer chose ${computerMove}. You Lost.`
-          );
-        } else if (yourMove === "Scissors" && computerMove === "Rock") {
-          results.losses += 1;
-          alert(
-            `You chose ${yourMove}. Computer chose ${computerMove}. You Lost.`
-          );
-        } else if (yourMove === "Scissors" && computerMove === "Paper") {
+        } else if (
+          (yourMove === "Rock" && computerMove === "Scissors") ||
+          (yourMove === "Scissors" && computerMove === "Paper") ||
+          (yourMove === "Paper" && computerMove === "Rock")
+        ) {
           results.wins += 1;
           alert(
             `You chose ${yourMove}. Computer chose ${computerMove}. You Won.`
