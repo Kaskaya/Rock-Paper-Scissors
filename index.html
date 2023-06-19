@@ -39,8 +39,7 @@
         wins: 0,
         losses: 0,
         ties: 0,
-      };
-      console.log(results);"
+      }"
     >
       Reset Score
     </button>
@@ -53,6 +52,8 @@
         losses: 0,
         ties: 0,
       };
+
+      results = JSON.parse(localStorage.getItem("result"));
 
       function function1() {
         let randomNumber = Math.random();
@@ -68,7 +69,8 @@
         if (yourMove === computerMove) {
           results.ties += 1;
           alert(
-            `You chose ${yourMove}. Computer chose ${computerMove}. It's a tie.`
+            `You chose ${yourMove}. Computer chose ${computerMove}. It's a tie.
+            Wins: ${results.wins}, Losses: ${results.losses}, Ties: ${results.ties}`
           );
         } else if (
           (yourMove === "Rock" && computerMove === "Paper") ||
@@ -77,7 +79,8 @@
         ) {
           results.losses += 1;
           alert(
-            `You chose ${yourMove}. Computer chose ${computerMove}. You lost.`
+            `You chose ${yourMove}. Computer chose ${computerMove}. You lost.
+            Wins: ${results.wins}, Losses: ${results.losses}, Ties: ${results.ties}`
           );
         } else if (
           (yourMove === "Rock" && computerMove === "Scissors") ||
@@ -86,10 +89,11 @@
         ) {
           results.wins += 1;
           alert(
-            `You chose ${yourMove}. Computer chose ${computerMove}. You Won.`
+            `You chose ${yourMove}. Computer chose ${computerMove}. You Won.
+            Wins: ${results.wins}, Losses: ${results.losses}, Ties: ${results.ties}`
           );
         }
-        console.log(results);
+        localStorage.setItem("result", JSON.stringify(results));
       }
     </script>
   </body>
