@@ -4,45 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h3
-      style="
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-          sans-serif;
-      "
-    >
-      Rock Paper Scissors
-    </h3>
-
-    <button
-      onclick="yourMove = 'Rock';
-    function1()"
-    >
-      Rock
-    </button>
-    <button
-      onclick="yourMove = 'Paper';
-    function1()"
-    >
-      Paper
-    </button>
-    <button
-      onclick="yourMove = 'Scissors';
-    function1()"
-    >
-      Scissors
-    </button>
-    <button
-      onclick="results = {
-        wins: 0,
-        losses: 0,
-        ties: 0,
-      }"
-    >
-      Reset Score
-    </button>
+    <h3>Rock Paper Scissors</h3>
+    <div class="all-buttons">
+      <button
+        onclick="yourMove = 'Rock';
+function1()"
+      >
+        Rock
+      </button>
+      <button
+        onclick="yourMove = 'Paper';
+function1()"
+      >
+        Paper
+      </button>
+      <button
+        onclick="yourMove = 'Scissors';
+function1()"
+      >
+        Scissors
+      </button>
+      <button
+        onclick="results = {
+    wins: 0,
+    losses: 0,
+    ties: 0,
+  };
+  score.textContent = 'Wins: 0, Losses: 0, Ties: 0' "
+      >
+        Reset Score
+      </button>
+    </div>
+    <div class="score">Wins: 0, Losses: 0, Ties: 0</div>
 
     <script>
       let computerMove = "";
@@ -52,6 +48,7 @@
         losses: 0,
         ties: 0,
       };
+      let score = document.querySelector(".score");
 
       results = JSON.parse(localStorage.getItem("result"));
 
@@ -93,6 +90,7 @@
             Wins: ${results.wins}, Losses: ${results.losses}, Ties: ${results.ties}`
           );
         }
+        score.innerHTML = `Wins: ${results.wins}, Losses: ${results.losses}, Ties: ${results.ties}`;
         localStorage.setItem("result", JSON.stringify(results));
       }
     </script>
