@@ -24,11 +24,10 @@ button {
   margin: 2rem;
 }
 
-.score {
+p {
   color: rgb(255, 255, 255);
   font-size: 2rem;
   display: flex;
   text-align: center;
   justify-content: center;
-  margin: 80px;
 }
