@@ -8,25 +8,34 @@
   </head>
   <body>
     <h3>Rock Paper Scissors</h3>
-    <div class="all-buttons">
+    <div class="buttons">
       <button
         onclick="yourMove = 'Rock';
 function1()"
       >
-        Rock
+        <img src="/img/Rock.png" class="rock" />
       </button>
       <button
         onclick="yourMove = 'Paper';
 function1()"
       >
-        Paper
+        <img src="/img/Paper.png" class="paper" />
       </button>
       <button
         onclick="yourMove = 'Scissors';
 function1()"
       >
-        Scissors
+        <img src="/img/Scissors.png" class="scissors" />
       </button>
+    </div>
+    <div class="inf">
+      <p class="moves"></p>
+    </div>
+    <div>
+      <p class="res"></p>
+      <p class="score">Wins: 0, Losses: 0, Ties: 0</p>
+    </div>
+    <div class="reset-button-container">
       <button
         onclick="results = {
     wins: 0,
@@ -38,13 +47,11 @@ function1()"
   moves.innerHTML = ''
   res.innerHTML = ''
   "
+        class="reset-button"
       >
         Reset Score
       </button>
     </div>
-    <p class="res"></p>
-    <p class="moves"></p>
-    <p class="score">Wins: 0, Losses: 0, Ties: 0</p>
 
     <script>
       let score = document.querySelector(".score");
@@ -101,7 +108,7 @@ function1()"
       }
 
       function updateMove() {
-        moves.innerHTML = `You chose ${yourMove}. Computer chose ${computerMove}`;
+        moves.innerHTML = `<p>You Chose</p> <img src="/img/${yourMove}.png" class="icon" /> <img src="/img/${computerMove}.png" class="icon" /> <p>Computer Chose</p> `;
       }
     </script>
   </body>
