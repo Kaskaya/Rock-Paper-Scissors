@@ -15,7 +15,6 @@ h3 {
 .buttons {
   display: flex;
   justify-content: center;
-  margin: 3rem;
 }
 
 p {
@@ -29,8 +28,8 @@ p {
 .rock,
 .paper,
 .scissors {
-  height: 250px;
-  margin: 15px;
+  height: 150px;
+  margin: 10px;
 }
 
 button {
@@ -72,5 +71,4 @@ button:hover {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
 }
